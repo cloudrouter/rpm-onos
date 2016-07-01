@@ -2,7 +2,7 @@
 
 Name: onos
 Summary: Open Network Operating System
-Version: 1.4.0
+Version: 1.6.0
 Release: 1%{?dist}
 Source0: http://downloads.onosproject.org/release/onos-%{version}.tar.gz
 Source1: onos.service
@@ -67,6 +67,8 @@ userdel %{onos_user}
 %attr(0644,-,-) %{_unitdir}/%{name}.service
 
 %changelog
+* Fri Jul 01 2016 David Jorm <david.jorm@gmail.com> - 1.6.0-1
+- Upgrade to 1.6.0 (Goldeneye)
 * Tue Dec 29 2015 John Siegrist <john@complects.com> - 1.4.0-1
 - Upgrade to 1.4.0 (Emu)
 * Tue Nov 03 2015 David Jorm <djorm@iix.net> - 1.3.0-1
