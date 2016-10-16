@@ -2,7 +2,7 @@
 
 Name: onos
 Summary: Open Network Operating System
-Version: 1.6.0
+Version: 1.7.0
 Release: 1%{?dist}
 Source0: http://downloads.onosproject.org/release/onos-%{version}.tar.gz
 Source1: onos.service
@@ -11,11 +11,13 @@ License: ASL 2.0
 URL: http://www.onosproject.org
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-buildroot
+
 %{?rhel:Requires: java-1.8.0-openjdk-devel}
 %{?fedora:Requires: java-devel >= 1.8.0}
 Requires(pre): shadow-utils, glibc-common
 Requires(postun): shadow-utils
 BuildRequires: systemd
+
 Provides: onos
 
 %pre
@@ -67,6 +69,8 @@ userdel %{onos_user}
 %attr(0644,-,-) %{_unitdir}/%{name}.service
 
 %changelog
+* Sun Oct 16 2016 John Siegrist <john@complects.com> - 1.7.0-1
+- Upgrade to 1.7.0
 * Fri Jul 01 2016 David Jorm <david.jorm@gmail.com> - 1.6.0-1
 - Upgrade to 1.6.0 (Goldeneye)
 * Tue Dec 29 2015 John Siegrist <john@complects.com> - 1.4.0-1
